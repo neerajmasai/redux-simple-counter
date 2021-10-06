@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -43,9 +44,10 @@
 
 input{
   width: 100px;
-  height: 60px;
-  font-size: 50px;
+  height: 30px;
+  font-size: 25px;
   text-align: center;
+  margin: 50px;
 }
 
 .Top{
@@ -60,4 +62,9 @@ input{
 .Display h1{
   font-size: 50px;
   margin: 0px;
+}
+
+.Bottom{
+  display: flex;
+  align-items: center;
 }

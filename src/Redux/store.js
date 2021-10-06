@@ -6,8 +6,27 @@ const reducer = (state, action) => {
             return { ...state, counter: state.counter+1 }
         case "Decrement":
             return { ...state, counter: state.counter-1 }
-        case "Todo":
-            return { ...state, todos: [...state.todos, action.payload] }
+        case "Add":
+            return { ...state, counter: state.counter + action.payload }
+        case "Subtract":
+            return { ...state, counter: state.counter - action.payload }
+        case "Multiply":
+            return { ...state, counter: state.counter * action.payload }
+        case "Divide":
+            let result = 0;
+            try {
+                result = state.counter / action.payload;
+                if(isNaN(result)){
+                    throw new Error("Invalid Input");
+                }
+                else{
+                    return { ...state, counter: result }
+                }
+            } catch (error) {
+                console.log(error)
+                alert("Cannot divide by zero!");
+            }
+            return { ...state }
         default:
             return { ...state }
     }
